@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAdd", "StudentAdd\StudentAdd.csproj", "{50C4AACE-20AF-4C92-BC78-EEF9286674E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockPanel", "DockPanel\DockPanel.csproj", "{267A410C-8EF9-4EA3-A7B2-1D0479FB0108}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{50C4AACE-20AF-4C92-BC78-EEF9286674E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50C4AACE-20AF-4C92-BC78-EEF9286674E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50C4AACE-20AF-4C92-BC78-EEF9286674E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{267A410C-8EF9-4EA3-A7B2-1D0479FB0108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{267A410C-8EF9-4EA3-A7B2-1D0479FB0108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{267A410C-8EF9-4EA3-A7B2-1D0479FB0108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{267A410C-8EF9-4EA3-A7B2-1D0479FB0108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
