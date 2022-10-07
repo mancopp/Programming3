@@ -11,11 +11,11 @@
             <Button DockPanel.Dock="Bottom">Bottom</Button>
             <Button DockPanel.Dock="Left">Left</Button>
             <Button DockPanel.Dock="Right">Right</Button>
-            <Button DockPanel.Dock="top" Height="50">top</Button>
-            <Button DockPanel.Dock="top" Height="100" Width="100">top2</Button>
-            <Button DockPanel.Dock="Right" Width="auto">Right2</Button>
-            <Button DockPanel.Dock="right">Right3</Button>
-            <Button DockPanel.Dock="top">top3</Button>
+            <Button DockPanel.Dock="top" Height="100" Background="Red">top</Button>
+            <Button DockPanel.Dock="top" Height="100" Width="100" Background="Green">top2</Button>
+            <Button DockPanel.Dock="Right" Height="80">Right2</Button>
+            <Button DockPanel.Dock="right" Height="80">Right3</Button>
+            <Button DockPanel.Dock="top" Height="80" Background="Blue">top3</Button>
             <Button>Fill</Button>
 
         </DockPanel>
