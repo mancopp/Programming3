@@ -25,35 +25,61 @@ namespace Calculator
             InitializeComponent();
         }
 
+        public string? prevOperand;
+        public string? currOperand;
+        public string? operation;
+        public bool secondOperandInput = false;
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var keyword = (e.Source as Button).Content.ToString();
 
             string[] operations = {"+", "-", "/", "*", "%"};
-            string[] digits = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "." };
+            string[] digits = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "," };
 
             if (digits.Contains(keyword))
             {
+                if (secondOperandInput)
+                {
+                    TextDisplay.Content = "";
+                    secondOperandInput = false;
+                }
+                else if (TextDisplay.Content != null)
+                {
+                    if (TextDisplay.Content.ToString().Contains(",") && keyword == ",") return;
+                }
+
                 TextDisplay.Content += keyword;
             }
             else if (operations.Contains(keyword))
             {
-                TextDisplay.Content += keyword;
+                //TODO: add handling operator to evaluate calculation
+                prevOperand = TextDisplay.Content.ToString();
+                operation = keyword;
+                TextDisplay.Content = operation;
+                secondOperandInput = true;
             }
-
-            if(keyword == "=")
+            else if(keyword == "=")
             {
-                var Content = TextDisplay.Content;
-                if (Content == null)
+                // TODO: check for null TextDisplay.Content
+                currOperand = TextDisplay.Content.ToString();
+                if (prevOperand == null || currOperand == null || operation == null)
                 {
-                    MessageBox.Show("Content is null.");
+                    MessageBox.Show(String.Format("Error: operands and operations can't be null: \n{0} \n{1} \n{2}", prevOperand, currOperand, operation));
                 }
-                //TODO: Splitting numbers and operations
+                else
+                {
+                    TextDisplay.Content = Evaluate(prevOperand, currOperand, operation);
+                }
+            }
+            else if (keyword == "Clear")
+            {
+                TextDisplay.Content = "";
             }
         }
 
         private string Evaluate(string num1, string num2, string operation)
-        {
+        { 
             float num1_s = float.Parse(num1);
             float num2_s = float.Parse(num2);
             float result_f = 0;
