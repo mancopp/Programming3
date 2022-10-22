@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +36,7 @@ namespace Calculator
             var keyword = (e.Source as Button).Content.ToString();
 
             string[] operations = {"+", "-", "/", "*", "%"};
-            string[] digits = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "," };
+            string[] digits = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "." };
 
             if (digits.Contains(keyword))
             {
@@ -46,7 +47,7 @@ namespace Calculator
                 }
                 else if (TextDisplay.Content != null)
                 {
-                    if (TextDisplay.Content.ToString().Contains(",") && keyword == ",") return;
+                    if (TextDisplay.Content.ToString().Contains(digits[10]) && keyword == digits[10]) return;
                 }
 
                 TextDisplay.Content += keyword;
@@ -65,7 +66,7 @@ namespace Calculator
                 currOperand = TextDisplay.Content.ToString();
                 if (prevOperand == null || currOperand == null || operation == null)
                 {
-                    MessageBox.Show(String.Format("Error: operands and operations can't be null: \n{0} \n{1} \n{2}", prevOperand, currOperand, operation));
+                    MessageBox.Show(String.Format("Error: operands and operations can't be null: \nprev: {0} \ncurr: {1} \noperation:{2}", prevOperand, currOperand, operation));
                 }
                 else
                 {
@@ -79,9 +80,9 @@ namespace Calculator
         }
 
         private string Evaluate(string num1, string num2, string operation)
-        { 
-            float num1_s = float.Parse(num1);
-            float num2_s = float.Parse(num2);
+        {
+            float num1_s = float.Parse(num1, CultureInfo.InvariantCulture);
+            float num2_s = float.Parse(num2, CultureInfo.InvariantCulture);
             float result_f = 0;
 
             switch (operation)
