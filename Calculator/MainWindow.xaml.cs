@@ -54,15 +54,20 @@ namespace Calculator
             }
             else if (operations.Contains(keyword))
             {
+                if (String.IsNullOrEmpty((string)TextDisplay.Content)) return;
+                if (TextDisplay.Content.ToString() == digits[10]) return;
                 //TODO: add handling operator to evaluate calculation
-                prevOperand = TextDisplay.Content.ToString();
+                if(!operations.Contains(TextDisplay.Content.ToString()))
+                {
+                    prevOperand = TextDisplay.Content.ToString();
+                }
                 operation = keyword;
                 TextDisplay.Content = operation;
                 secondOperandInput = true;
             }
             else if(keyword == "=")
             {
-                // TODO: check for null TextDisplay.Content
+                if (String.IsNullOrEmpty((string)TextDisplay.Content)) return;
                 currOperand = TextDisplay.Content.ToString();
                 if (prevOperand == null || currOperand == null || operation == null)
                 {
