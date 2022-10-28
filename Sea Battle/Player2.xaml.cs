@@ -10,23 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Sea_Battle
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Player2.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Player2 : Window
     {
-        Player1 win_player1 = new Player1();
-        Player2 win_player2 = new Player2();
-        public MainWindow()
+        public Player2()
         {
             InitializeComponent();
-            win_player1.Show();
-            win_player2.Show();
         }
     }
 }
