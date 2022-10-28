@@ -25,9 +25,12 @@ namespace TicTacToe
             InitializeComponent();
         }
         GameLogic _GameLogic = new GameLogic();
+        bool ClickCanBePerformed = true;
 
         private void GameFieldClickHandler(object sender, RoutedEventArgs e)
         {
+            if (!ClickCanBePerformed) return;
+
             var field = (Button)sender;
             if (!String.IsNullOrWhiteSpace(field.Content?.ToString())) return;
             field.Content = _GameLogic.CurrentPlayer;
@@ -42,13 +45,15 @@ namespace TicTacToe
             {
                 WinScreen.Text = $"Player {_GameLogic.CurrentPlayer} wins!";
                 WinScreen.Visibility = Visibility.Visible;
+                ClickCanBePerformed = false;
             }
-                
             _GameLogic.SetNextPlayer();
         }
 
         private void NewGameBtn_Click(object sender, RoutedEventArgs e)
         {
+            ClickCanBePerformed = true;
+
             foreach (var el in MainBoard.Children)
             {
                 if (el is Button)
