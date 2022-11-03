@@ -17,6 +17,8 @@ namespace Sea_Battle
     /// <summary>
     /// Interaction logic for Player1.xaml
     /// </summary>
+    /// 
+
     public partial class Player1 : Window
     {
         public Player1()
