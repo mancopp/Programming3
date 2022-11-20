@@ -4,340 +4,1526 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sea_Battle"
+        xmlns:converters="clr-namespace:Sea_Battle.Converters"
         mc:Ignorable="d"
-        Title="Player2" Height="450" Width="800">
+        Title="Player2" Height="600" Width="1200">
+    <Window.Resources>
+        <converters:IntToResourcePath x:Key="IntToResourcePath"/>
+        <ImageBrush x:Key="test" Stretch="UniformToFill" ImageSource="{Binding Path=BoardPlayer2[4], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}"/>
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"></Setter>
+            <Setter Property="Margin" Value="0"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-            <Grid Grid.Column="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="1">A</Label>
+            <Label Grid.Row="0" Grid.Column="2">B</Label>
+            <Label Grid.Row="0" Grid.Column="3">C</Label>
+            <Label Grid.Row="0" Grid.Column="4">D</Label>
+            <Label Grid.Row="0" Grid.Column="5">E</Label>
+            <Label Grid.Row="0" Grid.Column="6">F</Label>
+            <Label Grid.Row="0" Grid.Column="7">G</Label>
+            <Label Grid.Row="0" Grid.Column="8">H</Label>
+            <Label Grid.Row="0" Grid.Column="9">I</Label>
+            <Label Grid.Row="0" Grid.Column="10">J</Label>
 
-                <Label Grid.Row="0" Grid.Column="1">A</Label>
-                <Label Grid.Row="0" Grid.Column="2">B</Label>
-                <Label Grid.Row="0" Grid.Column="3">C</Label>
-                <Label Grid.Row="0" Grid.Column="4">D</Label>
-                <Label Grid.Row="0" Grid.Column="5">E</Label>
-                <Label Grid.Row="0" Grid.Column="6">F</Label>
-                <Label Grid.Row="0" Grid.Column="7">G</Label>
-                <Label Grid.Row="0" Grid.Column="8">H</Label>
-                <Label Grid.Row="0" Grid.Column="9">I</Label>
-                <Label Grid.Row="0" Grid.Column="10">J</Label>
+            <Label Grid.Column="0" Grid.Row="1">1</Label>
+            <Label Grid.Column="0" Grid.Row="2">2</Label>
+            <Label Grid.Column="0" Grid.Row="3">3</Label>
+            <Label Grid.Column="0" Grid.Row="4">4</Label>
+            <Label Grid.Column="0" Grid.Row="5">5</Label>
+            <Label Grid.Column="0" Grid.Row="6">6</Label>
+            <Label Grid.Column="0" Grid.Row="7">7</Label>
+            <Label Grid.Column="0" Grid.Row="8">8</Label>
+            <Label Grid.Column="0" Grid.Row="9">9</Label>
+            <Label Grid.Column="0" Grid.Row="10">10</Label>
 
-                <Label Grid.Column="0" Grid.Row="1">1</Label>
-                <Label Grid.Column="0" Grid.Row="2">2</Label>
-                <Label Grid.Column="0" Grid.Row="3">3</Label>
-                <Label Grid.Column="0" Grid.Row="4">4</Label>
-                <Label Grid.Column="0" Grid.Row="5">5</Label>
-                <Label Grid.Column="0" Grid.Row="6">6</Label>
-                <Label Grid.Column="0" Grid.Row="7">7</Label>
-                <Label Grid.Column="0" Grid.Row="8">8</Label>
-                <Label Grid.Column="0" Grid.Row="9">9</Label>
-                <Label Grid.Column="0" Grid.Row="10">10</Label>
+            <Button Grid.Row="1" Grid.Column="1" Click="Button_Click_Set">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[0], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="2" Click="Button_Click_Set">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[1], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="3" Click="Button_Click_Set">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[2], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="4" Click="Button_Click_Set">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[3], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="5" Click="Button_Click_Set">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[4], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="6" Click="Button_Click_Set">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[5], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="7" Click="Button_Click_Set">
 
-                <Button Grid.Row="1" Grid.Column="1"></Button>
-                <Button Grid.Row="1" Grid.Column="2"></Button>
-                <Button Grid.Row="1" Grid.Column="3"></Button>
-                <Button Grid.Row="1" Grid.Column="4"></Button>
-                <Button Grid.Row="1" Grid.Column="5"></Button>
-                <Button Grid.Row="1" Grid.Column="6"></Button>
-                <Button Grid.Row="1" Grid.Column="7"></Button>
-                <Button Grid.Row="1" Grid.Column="8"></Button>
-                <Button Grid.Row="1" Grid.Column="9"></Button>
-                <Button Grid.Row="1" Grid.Column="10"></Button>
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[6], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
 
-                <Button Grid.Row="2" Grid.Column="1"></Button>
-                <Button Grid.Row="2" Grid.Column="2"></Button>
-                <Button Grid.Row="2" Grid.Column="3"></Button>
-                <Button Grid.Row="2" Grid.Column="4"></Button>
-                <Button Grid.Row="2" Grid.Column="5"></Button>
-                <Button Grid.Row="2" Grid.Column="6"></Button>
-                <Button Grid.Row="2" Grid.Column="7"></Button>
-                <Button Grid.Row="2" Grid.Column="8"></Button>
-                <Button Grid.Row="2" Grid.Column="9"></Button>
-                <Button Grid.Row="2" Grid.Column="10"></Button>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="8" Click="Button_Click_Set">
 
-                <Button Grid.Row="3" Grid.Column="1"></Button>
-                <Button Grid.Row="3" Grid.Column="2"></Button>
-                <Button Grid.Row="3" Grid.Column="3"></Button>
-                <Button Grid.Row="3" Grid.Column="4"></Button>
-                <Button Grid.Row="3" Grid.Column="5"></Button>
-                <Button Grid.Row="3" Grid.Column="6"></Button>
-                <Button Grid.Row="3" Grid.Column="7"></Button>
-                <Button Grid.Row="3" Grid.Column="8"></Button>
-                <Button Grid.Row="3" Grid.Column="9"></Button>
-                <Button Grid.Row="3" Grid.Column="10"></Button>
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[7], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
 
-                <Button Grid.Row="4" Grid.Column="1"></Button>
-                <Button Grid.Row="4" Grid.Column="2"></Button>
-                <Button Grid.Row="4" Grid.Column="3"></Button>
-                <Button Grid.Row="4" Grid.Column="4"></Button>
-                <Button Grid.Row="4" Grid.Column="5"></Button>
-                <Button Grid.Row="4" Grid.Column="6"></Button>
-                <Button Grid.Row="4" Grid.Column="7"></Button>
-                <Button Grid.Row="4" Grid.Column="8"></Button>
-                <Button Grid.Row="4" Grid.Column="9"></Button>
-                <Button Grid.Row="4" Grid.Column="10"></Button>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="9" Click="Button_Click_Set">
 
-                <Button Grid.Row="5" Grid.Column="1"></Button>
-                <Button Grid.Row="5" Grid.Column="2"></Button>
-                <Button Grid.Row="5" Grid.Column="3"></Button>
-                <Button Grid.Row="5" Grid.Column="4"></Button>
-                <Button Grid.Row="5" Grid.Column="5"></Button>
-                <Button Grid.Row="5" Grid.Column="6"></Button>
-                <Button Grid.Row="5" Grid.Column="7"></Button>
-                <Button Grid.Row="5" Grid.Column="8"></Button>
-                <Button Grid.Row="5" Grid.Column="9"></Button>
-                <Button Grid.Row="5" Grid.Column="10"></Button>
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[8], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
 
-                <Button Grid.Row="6" Grid.Column="1"></Button>
-                <Button Grid.Row="6" Grid.Column="2"></Button>
-                <Button Grid.Row="6" Grid.Column="3"></Button>
-                <Button Grid.Row="6" Grid.Column="4"></Button>
-                <Button Grid.Row="6" Grid.Column="5"></Button>
-                <Button Grid.Row="6" Grid.Column="6"></Button>
-                <Button Grid.Row="6" Grid.Column="7"></Button>
-                <Button Grid.Row="6" Grid.Column="8"></Button>
-                <Button Grid.Row="6" Grid.Column="9"></Button>
-                <Button Grid.Row="6" Grid.Column="10"></Button>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="10" Click="Button_Click_Set">
 
-                <Button Grid.Row="7" Grid.Column="1"></Button>
-                <Button Grid.Row="7" Grid.Column="2"></Button>
-                <Button Grid.Row="7" Grid.Column="3"></Button>
-                <Button Grid.Row="7" Grid.Column="4"></Button>
-                <Button Grid.Row="7" Grid.Column="5"></Button>
-                <Button Grid.Row="7" Grid.Column="6"></Button>
-                <Button Grid.Row="7" Grid.Column="7"></Button>
-                <Button Grid.Row="7" Grid.Column="8"></Button>
-                <Button Grid.Row="7" Grid.Column="9"></Button>
-                <Button Grid.Row="7" Grid.Column="10"></Button>
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[9], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
 
-                <Button Grid.Row="8" Grid.Column="1"></Button>
-                <Button Grid.Row="8" Grid.Column="2"></Button>
-                <Button Grid.Row="8" Grid.Column="3"></Button>
-                <Button Grid.Row="8" Grid.Column="4"></Button>
-                <Button Grid.Row="8" Grid.Column="5"></Button>
-                <Button Grid.Row="8" Grid.Column="6"></Button>
-                <Button Grid.Row="8" Grid.Column="7"></Button>
-                <Button Grid.Row="8" Grid.Column="8"></Button>
-                <Button Grid.Row="8" Grid.Column="9"></Button>
-                <Button Grid.Row="8" Grid.Column="10"></Button>
+            </Button>
 
-                <Button Grid.Row="9" Grid.Column="1"></Button>
-                <Button Grid.Row="9" Grid.Column="2"></Button>
-                <Button Grid.Row="9" Grid.Column="3"></Button>
-                <Button Grid.Row="9" Grid.Column="4"></Button>
-                <Button Grid.Row="9" Grid.Column="5"></Button>
-                <Button Grid.Row="9" Grid.Column="6"></Button>
-                <Button Grid.Row="9" Grid.Column="7"></Button>
-                <Button Grid.Row="9" Grid.Column="8"></Button>
-                <Button Grid.Row="9" Grid.Column="9"></Button>
-                <Button Grid.Row="9" Grid.Column="10"></Button>
+            <Button Grid.Row="2" Grid.Column="1" Click="Button_Click_Set">
 
-                <Button Grid.Row="10" Grid.Column="1"></Button>
-                <Button Grid.Row="10" Grid.Column="2"></Button>
-                <Button Grid.Row="10" Grid.Column="3"></Button>
-                <Button Grid.Row="10" Grid.Column="4"></Button>
-                <Button Grid.Row="10" Grid.Column="5"></Button>
-                <Button Grid.Row="10" Grid.Column="6"></Button>
-                <Button Grid.Row="10" Grid.Column="7"></Button>
-                <Button Grid.Row="10" Grid.Column="8"></Button>
-                <Button Grid.Row="10" Grid.Column="9"></Button>
-                <Button Grid.Row="10" Grid.Column="10"></Button>
-            </Grid>
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[10], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
 
-            <Grid Grid.Column="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="2" Click="Button_Click_Set">
 
-                <Label Grid.Row="0" Grid.Column="1">A</Label>
-                <Label Grid.Row="0" Grid.Column="2">B</Label>
-                <Label Grid.Row="0" Grid.Column="3">C</Label>
-                <Label Grid.Row="0" Grid.Column="4">D</Label>
-                <Label Grid.Row="0" Grid.Column="5">E</Label>
-                <Label Grid.Row="0" Grid.Column="6">F</Label>
-                <Label Grid.Row="0" Grid.Column="7">G</Label>
-                <Label Grid.Row="0" Grid.Column="8">H</Label>
-                <Label Grid.Row="0" Grid.Column="9">I</Label>
-                <Label Grid.Row="0" Grid.Column="10">J</Label>
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[11], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
 
-                <Label Grid.Column="0" Grid.Row="1">1</Label>
-                <Label Grid.Column="0" Grid.Row="2">2</Label>
-                <Label Grid.Column="0" Grid.Row="3">3</Label>
-                <Label Grid.Column="0" Grid.Row="4">4</Label>
-                <Label Grid.Column="0" Grid.Row="5">5</Label>
-                <Label Grid.Column="0" Grid.Row="6">6</Label>
-                <Label Grid.Column="0" Grid.Row="7">7</Label>
-                <Label Grid.Column="0" Grid.Row="8">8</Label>
-                <Label Grid.Column="0" Grid.Row="9">9</Label>
-                <Label Grid.Column="0" Grid.Row="10">10</Label>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="3" Click="Button_Click_Set">
 
-                <Button Grid.Row="1" Grid.Column="1"></Button>
-                <Button Grid.Row="1" Grid.Column="2"></Button>
-                <Button Grid.Row="1" Grid.Column="3"></Button>
-                <Button Grid.Row="1" Grid.Column="4"></Button>
-                <Button Grid.Row="1" Grid.Column="5"></Button>
-                <Button Grid.Row="1" Grid.Column="6"></Button>
-                <Button Grid.Row="1" Grid.Column="7"></Button>
-                <Button Grid.Row="1" Grid.Column="8"></Button>
-                <Button Grid.Row="1" Grid.Column="9"></Button>
-                <Button Grid.Row="1" Grid.Column="10"></Button>
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[12], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
 
-                <Button Grid.Row="2" Grid.Column="1"></Button>
-                <Button Grid.Row="2" Grid.Column="2"></Button>
-                <Button Grid.Row="2" Grid.Column="3"></Button>
-                <Button Grid.Row="2" Grid.Column="4"></Button>
-                <Button Grid.Row="2" Grid.Column="5"></Button>
-                <Button Grid.Row="2" Grid.Column="6"></Button>
-                <Button Grid.Row="2" Grid.Column="7"></Button>
-                <Button Grid.Row="2" Grid.Column="8"></Button>
-                <Button Grid.Row="2" Grid.Column="9"></Button>
-                <Button Grid.Row="2" Grid.Column="10"></Button>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="4" Click="Button_Click_Set">
 
-                <Button Grid.Row="3" Grid.Column="1"></Button>
-                <Button Grid.Row="3" Grid.Column="2"></Button>
-                <Button Grid.Row="3" Grid.Column="3"></Button>
-                <Button Grid.Row="3" Grid.Column="4"></Button>
-                <Button Grid.Row="3" Grid.Column="5"></Button>
-                <Button Grid.Row="3" Grid.Column="6"></Button>
-                <Button Grid.Row="3" Grid.Column="7"></Button>
-                <Button Grid.Row="3" Grid.Column="8"></Button>
-                <Button Grid.Row="3" Grid.Column="9"></Button>
-                <Button Grid.Row="3" Grid.Column="10"></Button>
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[13], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
 
-                <Button Grid.Row="4" Grid.Column="1"></Button>
-                <Button Grid.Row="4" Grid.Column="2"></Button>
-                <Button Grid.Row="4" Grid.Column="3"></Button>
-                <Button Grid.Row="4" Grid.Column="4"></Button>
-                <Button Grid.Row="4" Grid.Column="5"></Button>
-                <Button Grid.Row="4" Grid.Column="6"></Button>
-                <Button Grid.Row="4" Grid.Column="7"></Button>
-                <Button Grid.Row="4" Grid.Column="8"></Button>
-                <Button Grid.Row="4" Grid.Column="9"></Button>
-                <Button Grid.Row="4" Grid.Column="10"></Button>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="5" Click="Button_Click_Set">
 
-                <Button Grid.Row="5" Grid.Column="1"></Button>
-                <Button Grid.Row="5" Grid.Column="2"></Button>
-                <Button Grid.Row="5" Grid.Column="3"></Button>
-                <Button Grid.Row="5" Grid.Column="4"></Button>
-                <Button Grid.Row="5" Grid.Column="5"></Button>
-                <Button Grid.Row="5" Grid.Column="6"></Button>
-                <Button Grid.Row="5" Grid.Column="7"></Button>
-                <Button Grid.Row="5" Grid.Column="8"></Button>
-                <Button Grid.Row="5" Grid.Column="9"></Button>
-                <Button Grid.Row="5" Grid.Column="10"></Button>
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[14], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
 
-                <Button Grid.Row="6" Grid.Column="1"></Button>
-                <Button Grid.Row="6" Grid.Column="2"></Button>
-                <Button Grid.Row="6" Grid.Column="3"></Button>
-                <Button Grid.Row="6" Grid.Column="4"></Button>
-                <Button Grid.Row="6" Grid.Column="5"></Button>
-                <Button Grid.Row="6" Grid.Column="6"></Button>
-                <Button Grid.Row="6" Grid.Column="7"></Button>
-                <Button Grid.Row="6" Grid.Column="8"></Button>
-                <Button Grid.Row="6" Grid.Column="9"></Button>
-                <Button Grid.Row="6" Grid.Column="10"></Button>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="6" Click="Button_Click_Set">
 
-                <Button Grid.Row="7" Grid.Column="1"></Button>
-                <Button Grid.Row="7" Grid.Column="2"></Button>
-                <Button Grid.Row="7" Grid.Column="3"></Button>
-                <Button Grid.Row="7" Grid.Column="4"></Button>
-                <Button Grid.Row="7" Grid.Column="5"></Button>
-                <Button Grid.Row="7" Grid.Column="6"></Button>
-                <Button Grid.Row="7" Grid.Column="7"></Button>
-                <Button Grid.Row="7" Grid.Column="8"></Button>
-                <Button Grid.Row="7" Grid.Column="9"></Button>
-                <Button Grid.Row="7" Grid.Column="10"></Button>
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[15], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
 
-                <Button Grid.Row="8" Grid.Column="1"></Button>
-                <Button Grid.Row="8" Grid.Column="2"></Button>
-                <Button Grid.Row="8" Grid.Column="3"></Button>
-                <Button Grid.Row="8" Grid.Column="4"></Button>
-                <Button Grid.Row="8" Grid.Column="5"></Button>
-                <Button Grid.Row="8" Grid.Column="6"></Button>
-                <Button Grid.Row="8" Grid.Column="7"></Button>
-                <Button Grid.Row="8" Grid.Column="8"></Button>
-                <Button Grid.Row="8" Grid.Column="9"></Button>
-                <Button Grid.Row="8" Grid.Column="10"></Button>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="7" Click="Button_Click_Set">
 
-                <Button Grid.Row="9" Grid.Column="1"></Button>
-                <Button Grid.Row="9" Grid.Column="2"></Button>
-                <Button Grid.Row="9" Grid.Column="3"></Button>
-                <Button Grid.Row="9" Grid.Column="4"></Button>
-                <Button Grid.Row="9" Grid.Column="5"></Button>
-                <Button Grid.Row="9" Grid.Column="6"></Button>
-                <Button Grid.Row="9" Grid.Column="7"></Button>
-                <Button Grid.Row="9" Grid.Column="8"></Button>
-                <Button Grid.Row="9" Grid.Column="9"></Button>
-                <Button Grid.Row="9" Grid.Column="10"></Button>
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[16], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
 
-                <Button Grid.Row="10" Grid.Column="1"></Button>
-                <Button Grid.Row="10" Grid.Column="2"></Button>
-                <Button Grid.Row="10" Grid.Column="3"></Button>
-                <Button Grid.Row="10" Grid.Column="4"></Button>
-                <Button Grid.Row="10" Grid.Column="5"></Button>
-                <Button Grid.Row="10" Grid.Column="6"></Button>
-                <Button Grid.Row="10" Grid.Column="7"></Button>
-                <Button Grid.Row="10" Grid.Column="8"></Button>
-                <Button Grid.Row="10" Grid.Column="9"></Button>
-                <Button Grid.Row="10" Grid.Column="10"></Button>
-            </Grid>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="8" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[17], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="2" Grid.Column="9" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[18], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="2" Grid.Column="10" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[19], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="3" Grid.Column="1" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[20], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="2" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[21], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="3" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[22], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="4" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[23], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="5" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[24], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="6" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[25], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="7" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[26], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="8" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[27], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="9" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[28], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="10" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[29], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="4" Grid.Column="1" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[30], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="2" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[31], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="3" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[32], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="4" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[33], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="5" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[34], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="6" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[35], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="7" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[36], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="8" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[37], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="9" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[38], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="10" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[39], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="5" Grid.Column="1" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[40], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="2" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[41], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="3" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[42], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="4" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[43], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="5" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[44], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="6" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[45], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="7" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[46], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="8" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[47], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="9" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[48], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="10" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[49], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="6" Grid.Column="1" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[50], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="2" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[51], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="3" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[52], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="4" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[53], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="5" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[54], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="6" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[55], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="7" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[56], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="8" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[57], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="9" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[58], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="10" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[59], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="7" Grid.Column="1" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[60], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="2" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[61], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="3" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[62], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="4" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[63], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="5" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[64], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="6" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[65], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="7" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[66], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="8" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[67], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="9" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[68], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="10" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[69], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="8" Grid.Column="1" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[70], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="2" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[71], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="3" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[72], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="4" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[73], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="5" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[74], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="6" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[75], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="7" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[76], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="8" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[77], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="9" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[78], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="10" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[79], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="9" Grid.Column="1" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[80], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="2" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[81], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="3" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[82], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="4" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[83], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="5" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[84], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="6" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[85], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="7" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[86], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="8" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[87], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="9" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[88], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="10" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[89], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="10" Grid.Column="1" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[90], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="2" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[91], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="3" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[92], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="4" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[93], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="5" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[94], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="6" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[95], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="7" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[96], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="8" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[97], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="9" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[98], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="10" Click="Button_Click_Set">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=BoardPlayer2[99], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Column="1" Grid.ColumnSpan="10" Grid.Row="11" Margin="10" Click="Button_Click_Ready" ></Button>
+        </Grid>
+
+        <Grid Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="1">A</Label>
+            <Label Grid.Row="0" Grid.Column="2">B</Label>
+            <Label Grid.Row="0" Grid.Column="3">C</Label>
+            <Label Grid.Row="0" Grid.Column="4">D</Label>
+            <Label Grid.Row="0" Grid.Column="5">E</Label>
+            <Label Grid.Row="0" Grid.Column="6">F</Label>
+            <Label Grid.Row="0" Grid.Column="7">G</Label>
+            <Label Grid.Row="0" Grid.Column="8">H</Label>
+            <Label Grid.Row="0" Grid.Column="9">I</Label>
+            <Label Grid.Row="0" Grid.Column="10">J</Label>
+
+            <Label Grid.Column="0" Grid.Row="1">1</Label>
+            <Label Grid.Column="0" Grid.Row="2">2</Label>
+            <Label Grid.Column="0" Grid.Row="3">3</Label>
+            <Label Grid.Column="0" Grid.Row="4">4</Label>
+            <Label Grid.Column="0" Grid.Row="5">5</Label>
+            <Label Grid.Column="0" Grid.Row="6">6</Label>
+            <Label Grid.Column="0" Grid.Row="7">7</Label>
+            <Label Grid.Column="0" Grid.Row="8">8</Label>
+            <Label Grid.Column="0" Grid.Row="9">9</Label>
+            <Label Grid.Column="0" Grid.Row="10">10</Label>
+
+            <Button Grid.Row="1" Grid.Column="1" Click="Button_Click_Shoot">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[0], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="2" Click="Button_Click_Shoot">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[1], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="3" Click="Button_Click_Shoot">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[2], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="4" Click="Button_Click_Shoot">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[3], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="5" Click="Button_Click_Shoot">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[4], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="6" Click="Button_Click_Shoot">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[5], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="7" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[6], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="1" Grid.Column="8" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[7], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="1" Grid.Column="9" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[8], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="1" Grid.Column="10" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[9], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="2" Grid.Column="1" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[10], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="2" Grid.Column="2" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[11], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="2" Grid.Column="3" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[12], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="2" Grid.Column="4" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[13], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="2" Grid.Column="5" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[14], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="2" Grid.Column="6" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[15], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="2" Grid.Column="7" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[16], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="2" Grid.Column="8" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[17], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="2" Grid.Column="9" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[18], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="2" Grid.Column="10" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[19], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="3" Grid.Column="1" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[20], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="2" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[21], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="3" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[22], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="4" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[23], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="5" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[24], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="6" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[25], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="7" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[26], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="8" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[27], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="9" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[28], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="3" Grid.Column="10" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[29], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="4" Grid.Column="1" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[30], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="2" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[31], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="3" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[32], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="4" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[33], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="5" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[34], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="6" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[35], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="7" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[36], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="8" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[37], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="9" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[38], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="4" Grid.Column="10" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[39], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="5" Grid.Column="1" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[40], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="2" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[41], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="3" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[42], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="4" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[43], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="5" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[44], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="6" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[45], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="7" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[46], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="8" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[47], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="9" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[48], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="5" Grid.Column="10" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[49], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="6" Grid.Column="1" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[50], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="2" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[51], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="3" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[52], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="4" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[53], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="5" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[54], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="6" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[55], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="7" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[56], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="8" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[57], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="9" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[58], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="6" Grid.Column="10" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[59], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="7" Grid.Column="1" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[60], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="2" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[61], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="3" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[62], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="4" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[63], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="5" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[64], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="6" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[65], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="7" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[66], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="8" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[67], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="9" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[68], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="7" Grid.Column="10" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[69], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="8" Grid.Column="1" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[70], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="2" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[71], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="3" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[72], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="4" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[73], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="5" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[74], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="6" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[75], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="7" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[76], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="8" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[77], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="9" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[78], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="8" Grid.Column="10" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[79], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="9" Grid.Column="1" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[80], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="2" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[81], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="3" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[82], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="4" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[83], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="5" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[84], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="6" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[85], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="7" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[86], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="8" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[87], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="9" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[88], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="9" Grid.Column="10" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[89], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+
+            <Button Grid.Row="10" Grid.Column="1" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[90], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="2" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[91], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="3" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[92], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="4" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[93], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="5" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[94], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="6" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[95], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="7" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[96], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="8" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[97], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="9" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[98], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
+            <Button Grid.Row="10" Grid.Column="10" Click="Button_Click_Shoot">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=EnemyPlayer2[99], Mode=TwoWay, Converter={StaticResource IntToResourcePath}}" Stretch="Fill" />
+                </Button.Background>
+
+            </Button>
 
         </Grid>
     </Grid>

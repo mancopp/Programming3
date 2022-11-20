@@ -23,5 +23,38 @@ namespace Sea_Battle
         {
             InitializeComponent();
         }
+
+        private void Button_Click_Set(object sender, RoutedEventArgs e)
+        {
+            if (((PlayerBoards)this.DataContext).gameStarted || ((PlayerBoards)this.DataContext).readyPlayer2) return;
+            Button btn = (Button)sender;
+            int i = Grid.GetColumn(btn) - 1 + 10 * (Grid.GetRow(btn) - 1);
+            ((PlayerBoards)this.DataContext).Set(((PlayerBoards)this.DataContext).BoardPlayer2, i);
+        }
+
+        private void Button_Click_Shoot(object sender, RoutedEventArgs e)
+        {
+            if (((PlayerBoards)this.DataContext).turnPlayer1 || !((PlayerBoards)this.DataContext).gameStarted) return;
+            Button btn = (Button)sender;
+            int i = Grid.GetColumn(btn) - 1 + 10 * (Grid.GetRow(btn) - 1);
+            ((PlayerBoards)this.DataContext).Shoot(((PlayerBoards)this.DataContext).BoardPlayer1, ((PlayerBoards)this.DataContext).EnemyPlayer2 , i, 2);
+            if (((PlayerBoards)this.DataContext).winner > 0) MessageBox.Show("Game finished. Winner: Player " + ((PlayerBoards)this.DataContext).winner);
+        }
+
+        private void Button_Click_Ready(object sender, RoutedEventArgs e)
+        {
+            if (((PlayerBoards)this.DataContext).readyPlayer2) return;
+
+            string checkResult = ((PlayerBoards)this.DataContext).LayoutIsValid(((PlayerBoards)this.DataContext).BoardPlayer2, false);
+            if (checkResult == "")
+            {
+                MessageBox.Show("Alignment is valid! " + ((PlayerBoards)this.DataContext).getShipTilesLocation(false));
+                ((PlayerBoards)this.DataContext).readyPlayer2 = true;
+            }
+            else
+            {
+                MessageBox.Show("Invalid Layout!\n" + checkResult);
+            }
+        }
     }
 }

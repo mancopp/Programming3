@@ -10,16 +10,22 @@
 
   <ItemGroup>
     <None Remove="Resources\cursor.png" />
+    <None Remove="Resources\empty.png" />
+    <None Remove="Resources\empty_hit.png" />
     <None Remove="Resources\hand.png" />
+    <None Remove="Resources\ship.png" />
+    <None Remove="Resources\ship_destr.png" />
+    <None Remove="Resources\ship_hit.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\cursor.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\hand.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Resources\cursor.png" />
+    <Resource Include="Resources\empty.png" />
+    <Resource Include="Resources\empty_hit.png" />
+    <Resource Include="Resources\hand.png" />
+    <Resource Include="Resources\ship.png" />
+    <Resource Include="Resources\ship_destr.png" />
+    <Resource Include="Resources\ship_hit.png" />
   </ItemGroup>
 
 </Project>
