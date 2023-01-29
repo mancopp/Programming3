@@ -7,20 +7,36 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListView x:Name="lvSongs">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Author}" Header="Author" Width="150"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Title" Width="150"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding IsFavourite}" Header="Favourite" Width="150"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button Content="Save" Click="Button_Click_Save" Width="50"/>
-            <Button Content="Add" Click="Button_Click_Add" Width="50"/>
-            <Button Content="Edit" Click="Button_Click_Edit" Width="50"/>
-            <Button Content="Delete" Click="Button_Click_Delete" Width="50"/>
-        </StackPanel>
+        <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <ListView x:Name="lvSongs" MouseDoubleClick="SongsListView_MouseDoubleClick" Grid.Column="0" SizeChanged="ListView_SizeChanged" FontWeight="SemiBold" VerticalContentAlignment="Top"  
+          ScrollViewer.VerticalScrollBarVisibility="Visible"
+          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+          ScrollViewer.CanContentScroll="False">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Height" Value="30" />
+                                <Setter Property="FontSize" Value="18" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding AuthorName}" Header="Author" />
+                                <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Title"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <StackPanel Grid.Column="1" Margin="5,5,5,5">
+                        <Button Margin="5" Content="Add Song" Click="OnAddSong" />
+                        <Button Margin="5" Content="Refresh" Click="OnFetchData" />
+                    </StackPanel>
+                </Grid>
     </Grid>
 </Window>

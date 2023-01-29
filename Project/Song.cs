@@ -9,56 +9,86 @@ namespace Project
 {
     public class Song : INotifyPropertyChanged
     {
+        private string _songId;
         private string _title;
-        private string _author;
-        private bool _isFavourite;
-        //private string _coverArtPath;
+        private string _lyrics;
+        private string _coverPath;
+        private string _authorId;
+        private string _authorName;
+
+        public string SongId
+        {
+            get { return _songId; }
+            set 
+            { 
+                if(_songId != value)
+                {
+                    _songId = value;
+                    NotifyPropertyChanged("SongId", value);
+                }
+            }
+        }
 
         public string Title
         {
             get { return _title; }
-            set 
-            { 
-                if(_title != value)
+            set
+            {
+                if (_title != value)
                 {
                     _title = value;
-                    NotifyPropertyChanged("Title");
+                    NotifyPropertyChanged("Title", value);
                 }
             }
         }
 
-        public string Author
+        public string Lyrics
         {
-            get { return _author; }
+            get { return _lyrics; }
             set
             {
-                if (_author != value)
+                if (_lyrics != value)
                 {
-                    _author = value;
-                    NotifyPropertyChanged("Author");
+                    _lyrics = value;
+                    NotifyPropertyChanged("Lyrics", value);
                 }
             }
         }
 
-        public bool IsFavourite
+        public string CoverPath
         {
-            get { return _isFavourite; }
+            get { return _coverPath; }
             set
             {
-                if (_isFavourite != value)
+                if (_coverPath != value)
                 {
-                    _isFavourite = value;
-                    NotifyPropertyChanged("IsFavourite");
+                    _coverPath = "Images/Songs/" + value + ".jpg";
+                    NotifyPropertyChanged("CoverPath", value);
+                }
+            }
+        }
+
+        public string AuthorName
+        {
+            get { return _authorName; }
+            set
+            {
+                if (_authorName != value)
+                {
+                    _authorName = value;
+                    NotifyPropertyChanged("AuthorName", value);
                 }
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void NotifyPropertyChanged(string propName)
+        public void NotifyPropertyChanged(string propName, string value)
         {
             if(PropertyChanged != null)
             {
+                if (propName == "Auhtor") propName = "AuthorName";
+                Database.RunOneWayQuery($"UPDATE Songs SET {propName}='{Database.formatStr(value)}' WHERE SongId = {this.SongId}");
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
         }

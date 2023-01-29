@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,83 +25,89 @@ namespace Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Song> songList;
+        private ObservableCollection<Song> songList = new ObservableCollection<Song>();
         public Song CurrentSong;
         public MainWindow()
         {
             InitializeComponent();
 
-            XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<Song>));
-            using (Stream s = File.OpenRead("d:/songList.xml")) songList = (ObservableCollection<Song>)xs.Deserialize(s);
+            //ConnectDB();
+            FetchData();
 
-            /*
-            songList = new ObservableCollection<Song>()
-            {
-                new Song(){Title="Stairway to Heaven", Author="Led Zeppelin", IsFavourite=true},
-                new Song(){Title="Sweet Child O' Mine", Author="Guns N' Roses", IsFavourite=true},
-                new Song(){Title="Welcome To The Jungle", Author="Guns N' Roses", IsFavourite=true},
-                new Song(){Title="Miracle Man", Author="Oliver Tree", IsFavourite=false},
-                new Song(){Title="Cash Machine", Author="Oliver Tree", IsFavourite=true},
-            };
-            */
+        }
+
+        public void FetchData()
+        {
+            songList = Database.RunProcedure<Song>("GetAllSongs");
 
             lvSongs.ItemsSource = songList;
 
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(lvSongs.ItemsSource);
             view.SortDescriptions.Add(new SortDescription("Author", ListSortDirection.Ascending));
-
         }
 
-        public void addItemToList()
+        private void ConnectDB()
         {
-            DataChecker();
-            songList.Add(CurrentSong);
-            SaveHandler();
-        }
+            string connetionString;
+            SqlConnection cnn;
+            connetionString = @"Server=localhost;Database=SongsDB;Trusted_Connection=True";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
 
-        public void DataChecker()
-        {
-            if (CurrentSong.Author == null || CurrentSong.Author == "" || CurrentSong.Title == null || CurrentSong.Title == "")
+            SqlCommand command;
+            SqlDataReader dataReader;
+            String sql;
+
+            sql = "SELECT * FROM Songs";
+            command = new SqlCommand(sql, cnn);
+            dataReader = command.ExecuteReader();
+
+            while (dataReader.Read())
             {
-                MessageBox.Show("Incorrect data");
-                return;
+                songList.Add(new Song(){ 
+                SongId = (string)dataReader["SongId"],
+                Title = (string)dataReader["Title"],
+                Lyrics = (string)dataReader["Lyrics"],
+                CoverPath = (string)dataReader["CoverPath"], 
+                AuthorName = (string)dataReader["AuthorName"],
+                });
             }
-            SaveHandler();
+
+            dataReader.Close();
+            cnn.Close();
         }
 
-        private void Button_Click_Save(object sender, RoutedEventArgs e)
+        private void SongsListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            SaveHandler();
-            MessageBox.Show("Saved.");
+            var item = ((FrameworkElement)e.OriginalSource).DataContext as Song;
+            if (item != null)
+            {
+                new SongDisplay(item, this).Show();
+            }
+        }     
+        
+        private void OnAddSong(object sender, RoutedEventArgs e)
+        {
+            new AddSong(this).Show();
         }
 
-        public void SaveHandler()
+        private void OnFetchData(object sender, RoutedEventArgs e)
         {
-            XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<Song>));
-            using (Stream s = File.Create("d:/songList.xml")) xs.Serialize(s, songList);
+            FetchData();
         }
 
-        private void Button_Click_Add(object sender, RoutedEventArgs e)
+        private void ListView_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            CurrentSong = new Song();
-            AddWindow addWindow = new AddWindow(this);
-            addWindow.Show();
+            ListView listView = sender as ListView;
+            GridView gView = listView.View as GridView;
+
+            var workingWidth = listView.ActualWidth - SystemParameters.VerticalScrollBarWidth; // take into account vertical scrollbar
+            var col1 = 0.50;
+            var col2 = 0.50;
+
+            gView.Columns[0].Width = workingWidth * col1;
+            gView.Columns[1].Width = workingWidth * col2;
         }
 
-        private void Button_Click_Edit(object sender, RoutedEventArgs e)
-        {
-            CurrentSong = (Song)lvSongs.SelectedItem;
-            if (CurrentSong == null) return;
-            EditWindow editWindow = new EditWindow(this);
-            editWindow.Show();
-        }
-
-        private void Button_Click_Delete(object sender, RoutedEventArgs e)
-        {
-            Song selSong = (Song)lvSongs.SelectedItem;
-            if(selSong == null) return;
-            songList.Remove(selSong);
-            SaveHandler();
-        }
     }
 }
